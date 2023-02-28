@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Price component Price match Snapshot 1`] = `
+<div
+  className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom css-h93ljk-MuiTypography-root"
+  data-testid="price"
+>
+  25,00 €
+</div>
+`;

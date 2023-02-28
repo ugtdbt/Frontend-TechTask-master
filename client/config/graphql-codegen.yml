@@ -1,0 +1,27 @@
+#Used for GraphQL-Codegen
+overwrite: true
+schema: "src/gql/schema.gql"
+documents: "src/**/*.gql"
+#Global configs
+config:
+  #Set the type for scalars, usually to get rid of an any
+  scalars:
+    IntString: number | string
+    Timestamp: number
+generates:
+  src/gql/index.ts:
+    plugins:
+      - "typescript"
+  ./:
+    preset: near-operation-file
+    presetConfig:
+      extension: .generated-query.ts
+      baseTypesPath: src/gql
+    plugins:
+      - add:
+          content: "/* eslint-disable @typescript-eslint/explicit-module-boundary-types */"
+      - typescript-operations
+      - typescript-react-query
+    config:
+      addInfiniteQuery: true
+      fetcher: graphql-request

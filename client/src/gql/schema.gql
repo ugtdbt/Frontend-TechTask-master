@@ -1,0 +1,81 @@
+type Query {
+  productLists(ids: [String!], locale: Locale!): [ProductList]
+
+  autoSuggestion_v2(
+    prefix: String!
+    locale: Locale!
+    format: ArticleImageFormat
+    backend: SearchBackend
+    userAgent: String
+    userIP: String
+    thirdPartyClientId: String
+    thirdPartySessionId: String
+  ): [SearchSuggestion]
+}
+
+type ProductList {
+  name: String
+  articleCount: Int
+  childrenProductLists: [ChildProductList]
+  articlesList(first: Int!): Articles
+}
+
+type ChildProductList {
+  list: [ChildProduct]
+}
+
+type ChildProduct {
+  name: String
+  urlPath: String
+}
+
+type Articles {
+  articles: [Article]
+}
+
+type Article {
+  name: String
+  variantName: String
+  prices: Price
+  images(
+    format: ProductListImageFormat
+    maxWidth: Int!
+    maxHeight: Int!
+    limit: Int!
+  ): [Image]
+}
+
+type Price {
+  currency: String
+  regular: Regular
+}
+
+type Regular {
+  value: Float
+}
+
+type Image {
+  path: String
+}
+
+type SearchSuggestion {
+  name: String!
+  image(format: ArticleImageFormat): String
+  total: Int!
+}
+
+enum Locale {
+  de_DE
+}
+
+enum ProductListImageFormat {
+  WEBP
+}
+
+enum ArticleImageFormat {
+  WEBP
+}
+
+enum SearchBackend {
+  ThirdParty
+}

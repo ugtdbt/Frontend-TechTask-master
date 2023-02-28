@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component Footer Match Snapshot 1`] = `
+<footer
+  className="MuiBox-root css-1k76al1"
+  data-testid="footer"
+>
+  <div
+    className="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter css-1vl95ex-MuiTypography-root"
+      data-testid="footer-description"
+    >
+      Alle Preise sind in Euro (€) inkl. gesetzlicher Umsatzsteuer und Versandkosten.
+    </p>
+  </div>
+</footer>
+`;

@@ -1,0 +1,56 @@
+#The graphql requests that will be generated into product.generated.tsx
+
+query GetProductLists($id: String!, $locale: Locale!) {
+  categories: productLists(ids: [$id], locale: $locale) {
+    name
+    articleCount
+    childrenCategories: childrenProductLists {
+      list {
+        name
+        urlPath
+      }
+    }
+    categoryArticles: articlesList(first: 100) {
+      articles {
+        name
+        variantName
+        prices {
+          currency
+          regular {
+            value
+          }
+        }
+        images(format: WEBP, maxWidth: 200, maxHeight: 200, limit: 1) {
+          path
+        }
+      }
+    }
+  }
+}
+
+query SearchSuggestionsV2(
+  $prefix: String!
+  $locale: Locale!
+  $format: ArticleImageFormat
+  $backend: SearchBackend
+  $userAgent: String
+  $userIP: String
+  $thirdPartyClientId: String
+  $thirdPartySessionId: String
+) {
+  suggestions: autoSuggestion_v2(
+    prefix: $prefix
+    locale: $locale
+    backend: $backend
+    userAgent: $userAgent
+    userIP: $userIP
+    thirdPartyClientId: $thirdPartyClientId
+    thirdPartySessionId: $thirdPartySessionId
+  ) {
+    ... on SearchSuggestion {
+      name
+      image(format: $format)
+      count: total
+    }
+  }
+}

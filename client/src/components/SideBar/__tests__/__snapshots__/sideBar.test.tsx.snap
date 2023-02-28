@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideBar component SideBar Match Snapshot 1`] = `
+<div
+  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-2 css-13i4rnv-MuiGrid-root"
+  data-testid="sidebar"
+>
+  <h6
+    className="MuiTypography-root MuiTypography-h6 MuiTypography-gutterBottom css-15zetcd-MuiTypography-root"
+  >
+    Kategorien
+  </h6>
+  <a
+    className="MuiTypography-root MuiTypography-body1 MuiLink-root MuiLink-underlineAlways sideBar-item css-1qlkw6l-MuiTypography-root-MuiLink-root"
+    href="wohnzimmer-moebel/"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    Wohnzimmer
+  </a>
+  <a
+    className="MuiTypography-root MuiTypography-body1 MuiLink-root MuiLink-underlineAlways sideBar-item css-1qlkw6l-MuiTypography-root-MuiLink-root"
+    href="alle-polstermoebel/"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    Polstermöbel
+  </a>
+</div>
+`;
